@@ -20,6 +20,7 @@ layout: default
         annd then I shall cover how Monte Carlo methods can help us.
     </p>
     <h1> The Math </h1>
+    Suppose b represent the new baby where M is Male (boy) and F is female (Girl), and n represent the nurse selection.
     \[\mathbb{P}(b=M|n=M) = ?\] 
     \[Prior Probability: \mathbb{P}(b=M) = 0.5\]
     \[\mathbb{P}(n=M|b=M) = \frac{3}{6} = 0.5 \]
@@ -36,11 +37,26 @@ layout: default
     \[\mathbb{P}(b=M|n=M) = \frac{0.5*0.5}{0.5*0.5 + \frac{1}{3}*0.5} = \frac{0.5}{0.5 + \frac{1}{3}} = \frac{3}{5}\]
 
 
-
+So our answer is 0.6. 
 
 
 
     <h1> Monte Carlo Methods </h1>
+    <p>
+As questions like these get more and more complex, they require more thought and expertise. What if there is a way to solve this problem with no knowledge of statistics? Well this is the solution! Monte Carlo Methods essentially simulate the 
+situation and run enough trial to obtain a robust result. So our pseudo code is as follows for this specific question.
+<pre>
+<code> 
+n = 1,000,000 
+samples = 0
+new_baby = ''
+for i in range n:
+        num_girls = 3
+        num_boys = 2
+
+</code>
+</pre>
+</p>
     
 </body>
 </html>
