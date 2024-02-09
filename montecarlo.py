@@ -41,16 +41,18 @@ for i in range(n):
         graph_time.append(elapsed_time)
         
         
-    if i % (n/100) == 0:        
-        if samples != 0:
-            x.append(successful_samples/samples)
-            y.append(i)  
+
+        x.append(successful_samples/samples)
+        y.append(i)  
+
+
+
             
 distances = np.abs(np.array(x) - 0.6)
 normalized_distances = distances / np.max(distances)
 colors = cm.viridis(normalized_distances)
 
-for i in range(len(x)):
+"""for i in range(len(x)):
         plt.xlim(0.4, 0.8)
         plt.ylim(0,n)
         plt.title("Monte Carlo Simulation")
@@ -63,8 +65,22 @@ for i in range(len(x)):
         plt.scatter(x[i], y[i], c=colors[i], alpha=0.5)
         plt.pause(0.001)
 
-plt.show() 
-            
+plt.show() """
+    
+    
+
+plt.xlim(0.4, 0.8)
+plt.ylim(1, n)  # Set a lower limit for y-axis for log scale
+plt.yscale('log')  # Set y-axis to log scale
+plt.title("Monte Carlo Simulation")
+plt.xlabel("Recorded Value")
+plt.ylabel("Iteration")
+plt.annotate(round(x[-1], 5), xy=(x[-1], y[-1]), xytext=(0.45, n / 2),
+                fontsize=12, color='white', backgroundcolor='red')
+
+plt.axvline(x=0.6, color='red', linestyle='--', linewidth=1)
+plt.scatter(x, y, c=colors, alpha=0.5)
+plt.show()
 
 
 # Create figure and axes
