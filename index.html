@@ -1,17 +1,46 @@
 ---
 layout: default
 ---
-
+<html>
+    <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>MathJax example</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
 <body>
     <h1> Monte Carlo Methods </h1>
     <p> Suppose you are given the following question: 
-        There are 5 babies in a room, 2 boys and 3 girls. A new baby enters the room. A nurse picks a baby at rondom. The baby is a boy. What is the probability the new baby is a boy?
+        <b>There are 5 babies in a room, 2 boys and 3 girls. A new baby enters the room. A nurse picks a baby at rondom. The baby is a boy. What is the probability the new baby is a boy?</b></p><p>
         This is a question I stumbled upon in a job interviewed. Now for some this question can be answered with a couple of lines of maths using probability, but for others this may not be the case. 
         This brief page aims to show how Monte Carlo methods can be emplyoyed to solve problems where you may not know the maths or be an expert. First I shall go through the mathematical solution (you do not have to understand this)
-        annd then I shall cover how Monte Carlo methods can help us
+        annd then I shall cover how Monte Carlo methods can help us.
     </p>
     <h1> The Math </h1>
-        
+    \[\mathbb{P}(b=M|n=M) = ?\] 
+    \[Prior Probability: \mathbb{P}(b=M) = 0.5\]
+    \[\mathbb{P}(n=M|b=M) = \frac{3}{6} = 0.5 \]
+    \[\mathbb{P}(n=M|b=F) = \frac{2}{6} = \frac{1}{3}\]
+
+     \[Bayes Rule: \mathbb{P}(A|B) = \frac{\mathbb{P}(B|A)\mathbb{P}(A)}{\mathbb{P}(B)}   \]
+
+
+    \[\mathbb{P}(b=M|n=M)  = \frac{\mathbb{P}(n=M|b=M)\mathbb{P}(b=M)}{\mathbb{P}(n=M)}   \]
+
+    \[\mathbb{P}(n=M) = \mathbb{P}(n=M|b=M)*\mathbb{P}(b=M) + \mathbb{P}(n=M|b=F)*\mathbb{P}(b=F) = 0.5*0.5 + \frac{1}{3}*0.5  \] 
+
+
+    \[\mathbb{P}(b=M|n=M) = \frac{0.5*0.5}{0.5*0.5 + \frac{1}{3}*0.5} = \frac{0.5}{0.5 + \frac{1}{3}} = \frac{3}{5}\]
+
+
+
+
+
+
     <h1> Monte Carlo Methods </h1>
     
 </body>
+</html>
